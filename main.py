@@ -92,7 +92,7 @@ class  CINT:
 	    			serialNumber=raw_input ("please input serial number for slot %s:" %(j+1))	
 			
 				#to check the sn format
-				self.pattern= "J\w{8}$"
+				self.pattern= self.cf.get("FlexFlow_Info", "sn_re")
 		        	p = re.compile(self.pattern)
         			if p.match(serialNumber):
             				break
